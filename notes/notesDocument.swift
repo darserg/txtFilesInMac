@@ -17,11 +17,11 @@ extension UTType {
 struct notesDocument: FileDocument {
     var text: String
 
-    init(text: String = "Hello, world!") {
-        self.text = text
+    init() {
+        self.text = "H"
     }
 
-    static var readableContentTypes: [UTType] { [.exampleText] }
+    static var readableContentTypes: [UTType] { [.plainText, .exampleText, .text] }
 
     init(configuration: ReadConfiguration) throws {
         guard let data = configuration.file.regularFileContents,
