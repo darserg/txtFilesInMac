@@ -24,7 +24,7 @@ struct ContentView: View {
         HStack{
             ForEach(buttons, id: \.self){InterfaceButton in
                 Button(action: {
-                    didTap(button: InterfaceButton)},
+                    didTap(_item: InterfaceButton)},
                        label:{
                     Text(InterfaceButton.rawValue)
                         .font(.system(size: 14, weight: .bold))
@@ -41,6 +41,31 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-func didTap(button: UIButtons){
+func didTap(_item : UIButtons ){
+    switch _item{
+    case .save:
+        save()
+    case .saveAs:
+        saveAs()
+    case .new:
+        New()
+    case .open:
+        Open()
+    }
+}
+
+func save(){
+    
+}
+
+func saveAs(){
+    
+}
+
+func New(){
+    
+}
+
+func Open(){
     
 }
