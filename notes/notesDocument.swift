@@ -18,7 +18,7 @@ struct notesDocument: FileDocument {
     var text: String
 
     init() {
-        self.text = "H"
+        self.text = ""
     }
 
     static var readableContentTypes: [UTType] { [.plainText, .exampleText, .text] }
