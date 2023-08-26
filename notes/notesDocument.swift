@@ -15,13 +15,13 @@ extension UTType {
 }
 
 struct notesDocument: FileDocument {
-    var text: String
+    public var text: String
 
     init() {
         self.text = ""
     }
 
-    static var readableContentTypes: [UTType] { [.plainText, .exampleText, .text] }
+    static var readableContentTypes: [UTType] { [.plainText] }
 
     init(configuration: ReadConfiguration) throws {
         guard let data = configuration.file.regularFileContents,
