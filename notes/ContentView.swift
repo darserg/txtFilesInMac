@@ -28,7 +28,7 @@ struct ContentView: View {
                        label:{
                     Text(InterfaceButton.rawValue)
                         .font(.system(size: 14, weight: .bold))
-                }).padding(0)
+                }).padding(10)
             }
         }
         TextEditor(text: $document.text)
@@ -55,7 +55,8 @@ func didTap(_item : UIButtons ){
 }
 
 func save(){
-    
+    let text = notesDocument().text
+    print(text)
 }
 
 func saveAs(){
