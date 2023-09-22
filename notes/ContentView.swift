@@ -21,17 +21,21 @@ struct ContentView: View {
     @Binding var document: notesDocument
 
     var body: some View {
-        HStack{
-            ForEach(buttons, id: \.self){InterfaceButton in
-                Button(action: {
-                    didTap(_item: InterfaceButton)},
-                       label:{
-                    Text(InterfaceButton.rawValue)
-                        .font(.system(size: 14, weight: .bold))
-                }).padding(10)
-            }
+        //        HStack{
+        //            ForEach(buttons, id: \.self){InterfaceButton in
+        //                Button(action: {
+        //                    didTap(_item: InterfaceButton)},
+        //                       label:{
+        //                    Text(InterfaceButton.rawValue)
+        //                        .font(.system(size: 14, weight: .bold))
+        //                }).padding(10)
+        //            }
+        //        }
+        //        TextEditor(text: $document.text)
+        //    }
+        VStack{
+            TextEditor(text: $document.text)
         }
-        TextEditor(text: $document.text)
     }
 }
 
@@ -55,8 +59,7 @@ func didTap(_item : UIButtons ){
 }
 
 func save(){
-    let text = notesDocument().text
-    print(text)
+    
 }
 
 func saveAs(){
